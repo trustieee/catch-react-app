@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import HeaderComponent from './components/common/HeaderComponent';
 import PageNotFoundComponent from './components/common/PageNotFoundComponent';
 import HomeComponent from './components/HomeComponent';
-import FoosController from './components/FooController';
+import FooController from './components/FooController';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <HeaderComponent />
       <Switch>
         <Route path="/" exact component={HomeComponent} />
-        <Route path="/foos" component={FoosController} />
+        <Route path="/foos" component={FooController} />
         <Redirect from="/home" to="/" />
         <Route component={PageNotFoundComponent} />
       </Switch>

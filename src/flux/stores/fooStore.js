@@ -18,7 +18,9 @@ class FooStore extends EventEmitter {
     this.emit(CHANGE_EVENT, callback);
   }
 
-  getFoos = () => _foos;
+  getFoos() {
+    return _foos;
+  }
 }
 
 const _store = new FooStore();

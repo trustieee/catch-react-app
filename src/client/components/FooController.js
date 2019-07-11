@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
 import fooStore from '../../flux/stores/fooStore';
 import * as fooActions from '../../flux/actions/fooActions';
+import FooListComponent from './FooListComponent';
 
 const FooController = () => {
-  const [foos, setFoos] = useState([]);
+  const [foos, setFoos] = useState(fooStore.getFoos());
 
-  useEffect(() => {
-    const onFoosChange = () => {
-      setFoos(fooStore.getFoos());
-    };
+  useEffect(
+    function() {
+      const onFoosChange = () => {
+        setFoos(fooStore.getFoos());
+      };
 
-    fooStore.addChangeListener(onFoosChange);
-    if (foos.length === 0) fooActions.loadFoos();
+      fooStore.addChangeListener(onFoosChange);
+      if (foos.length === 0) fooActions.loadFoos();
 
-    return () => {
-      fooStore.removeChangeListener(onFoosChange);
-    };
-  }, [foos.length]);
-
-  const handleOnClick = event => {
-    toast.success('API Called');
-  };
-
-  return <button onClick={handleOnClick}>Click me</button>;
+      return () => {
+        fooStore.removeChangeListener(onFoosChange);
+      };
+    },
+    [foos.length]
+  );
+  return <FooListComponent foos={foos} />;
 };
 
 export default FooController;

@@ -2,7 +2,7 @@
   "name": "catch-react-app",
   "version": "0.0.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001/api",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",

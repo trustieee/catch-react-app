@@ -13,8 +13,8 @@ function HeaderComponent() {
         Home
       </NavLink>
       {' | '}
-      <NavLink activeStyle={activeStyle} to="/test-api">
-        API
+      <NavLink activeStyle={activeStyle} to="/foos">
+        Foos
       </NavLink>
     </nav>
   );
