@@ -1,14 +1,25 @@
 {
   "name": "catch-react-app",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "flux": "^3.1.3",
+    "http-proxy-middleware": "^0.19.1",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start:api": "nodemon ./src/server/server.js",
+    "start:site": "react-scripts start",
+    "start": "run-p start:api start:site",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -27,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5"
   }
 }
