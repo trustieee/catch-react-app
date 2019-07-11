@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import fooStore from '../../flux/stores/fooStore';
-import * as fooActions from '../../flux/actions/fooActions';
+import fooStore from '../flux/stores/fooStore';
+import * as fooActions from '../flux/actions/fooActions';
 import FooListComponent from './FooListComponent';
 
 const FooController = () => {
